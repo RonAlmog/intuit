@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-// create new transaction
+// create new user
 export async function POST(req: Request) {
   const { firstName, lastName, email } = await req.json();
 

@@ -14,7 +14,7 @@ import axios from "axios";
 
 const InvoicesClient = () => {
   const router = useRouter();
-  const [invoices, setInovoices] = useState([]);
+  const [invoices, setInovoices] = useState<Invoice[]>([]);
 
   useEffect(() => {
     const getTheInvoices = async () => {
@@ -50,6 +50,7 @@ const InvoicesClient = () => {
             title={`Invoices (${invoices.length})`}
             description="Manage your invoices"
           />
+
           <Button onClick={() => router.push("/invoice/new")}>
             <Plus className="mr-2 h-4 w-4" />
             Add New
@@ -57,7 +58,7 @@ const InvoicesClient = () => {
         </div>
         <Separator />
 
-        <DataTable columns={columns} data={invoices} />
+        <DataTable columns={columns} data={invoices} searchKey="clientName" />
       </div>
     </div>
   );

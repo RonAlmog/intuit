@@ -29,7 +29,6 @@ export async function PATCH(
     }
 
     const valid = await validate(amount, reference, createdAt);
-    console.log("created", createdAt);
 
     const invoice = await db.invoice.update({
       where: { id: params.id },
