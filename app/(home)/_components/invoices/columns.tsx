@@ -8,10 +8,10 @@ import CellAction from "./cell-action";
 export type InvoiceColumn = {
   id: string;
   clientName: string;
-  amount: string;
+  amount: number;
   reference: string;
   status: string;
-  createdAt: string;
+  createdAt: Date;
 };
 
 export const columns: ColumnDef<InvoiceColumn>[] = [
